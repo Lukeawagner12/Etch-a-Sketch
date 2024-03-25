@@ -1,0 +1,1 @@
+This is a javascript program to desminstrate ability to create an etch-a-sketch using javascript.
