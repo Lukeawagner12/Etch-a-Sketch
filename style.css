@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.header {
+    background-color: bisque;
+}
+.grid-wrapper {
+    background-color: lightgray;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid-square {
+    width: 100px;
+    height: 100px;
+}
+.square-active {
+    background-color: rebeccapurple;
+}
