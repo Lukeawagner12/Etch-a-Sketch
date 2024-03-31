@@ -1,5 +1,6 @@
 // Setup grid wrapper and add squares
 let gridWrapper = document.querySelector('.grid-wrapper');
+let header = document.querySelector('.header');
 let userInput = getUserInput();
 let gridSize = getGridSize(userInput);
 setGrid(gridSize, userInput);
@@ -14,7 +15,11 @@ resetBtn.addEventListener('click', function() {
 
 // Get user input on reset
 function getUserInput() {
-    let newGridSize = prompt("Select the grid size you would like to try next");
+    let newGridSize = prompt("Enter size of canvas (example: 55), max is 100.");
+    if (newGridSize > 100) {
+        newGridSize = prompt("Over max limit of 100. Please try again.");
+        console.log("Entered over 100, reduced to 100");
+    }
     return newGridSize
 }
 
@@ -26,7 +31,6 @@ function getGridSize(userInput) {
 
 // Set grid
 function setGrid(gridSize, userInput) {
-    console.log(userInput);
     let squareHightWidth = 100 / userInput;
     for (let i = 0; i < gridSize; i++) {
         const square = document.createElement("div");
@@ -38,6 +42,20 @@ function setGrid(gridSize, userInput) {
         });
         gridWrapper.appendChild(square);
     }
+    removeLabel();
+    let gridSizeLabel = document.createElement("p");
+    gridSizeLabel.setAttribute("class", "label");
+    let labelText = document.createTextNode("Current grid size is:" + userInput + "x" + userInput);
+    gridSizeLabel.appendChild(labelText);
+    header.appendChild(gridSizeLabel);
+}
+
+//removeLabel
+function removeLabel() {
+    let label = document.querySelector('.label');
+    if(label){
+        label.remove();
+    } 
 }
 
 // Remove current squares
