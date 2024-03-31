@@ -45,7 +45,7 @@ function setGrid(gridSize, userInput) {
     removeLabel();
     let gridSizeLabel = document.createElement("p");
     gridSizeLabel.setAttribute("class", "label");
-    let labelText = document.createTextNode("Current grid size is:" + userInput + "x" + userInput);
+    let labelText = document.createTextNode("Current grid size is: " + userInput + "x" + userInput);
     gridSizeLabel.appendChild(labelText);
     header.appendChild(gridSizeLabel);
 }
